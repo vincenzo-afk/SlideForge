@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vincenzo-afk.github.io/SlideForge/sitemap.xml

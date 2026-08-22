@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== Primary SEO ===== -->
+  <title>SlideForge — AI-Powered Presentation Generator | No Frameworks Needed</title>
+  <meta name="description" content="SlideForge turns any topic into a polished, multi-slide presentation in seconds using AI. Pure HTML, CSS and vanilla JavaScript — no frameworks, no build tools. Edit inline and export to PDF or PPTX.">
+  <meta name="keywords" content="AI presentation generator, AI slides, presentation maker, slide generator, PowerPoint alternative, free presentation tool, HTML presentation, PPTX export, PDF export, SlideForge">
+  <meta name="author" content="Vincenzo AFK">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://vincenzo-afk.github.io/SlideForge/">
+
+  <!-- ===== Favicons ===== -->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+
+  <!-- ===== Open Graph ===== -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SlideForge">
+  <meta property="og:title" content="SlideForge — AI-Powered Presentation Generator">
+  <meta property="og:description" content="Turn any topic into a polished, AI-designed slide deck in seconds. No frameworks, no build tools. Edit inline, export to PDF or PPTX.">
+  <meta property="og:image" content="https://vincenzo-afk.github.io/SlideForge/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="SlideForge — AI-Powered Presentation Generator, logo with purple and blue magic wand over a slide">
+  <meta property="og:url" content="https://vincenzo-afk.github.io/SlideForge/">
+
+  <!-- ===== Twitter Card ===== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SlideForge — AI-Powered Presentation Generator">
+  <meta name="twitter:description" content="Turn any topic into a polished, AI-designed slide deck in seconds. No frameworks, no build tools.">
+  <meta name="twitter:image" content="https://vincenzo-afk.github.io/SlideForge/assets/og-image.png">
+  <meta name="twitter:image:alt" content="SlideForge logo with magic wand over a slide">
+
+  <!-- ===== Structured data (JSON-LD) ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "SlideForge",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Any (web browser)",
+    "url": "https://vincenzo-afk.github.io/SlideForge/",
+    "description": "AI-powered presentation generator that creates polished, editable slide decks from a single topic prompt. Built with pure HTML, CSS and vanilla JavaScript — no frameworks, no build tools. Export to PDF and PPTX.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "image": "https://vincenzo-afk.github.io/SlideForge/assets/og-image.png",
+    "author": { "@type": "Person", "name": "Vincenzo AFK", "url": "https://github.com/vincenzo-afk" },
+    "codeRepository": "https://github.com/vincenzo-afk/SlideForge",
+    "license": "https://opensource.org/licenses/MIT",
+    "keywords": "AI presentation generator, slide maker, PPTX export, PDF export"
+  }
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ================= Header ================= -->
+  <header class="sf-header" role="banner">
+    <a class="sf-brand" href="#top" aria-label="SlideForge home">
+      <img src="assets/logo.png" alt="SlideForge logo — magic wand over a slide" width="44" height="44">
+      <span>
+        <span class="sf-brand-name">SlideForge</span>
+        <span class="sf-brand-tag">AI Presentation Generator</span>
+      </span>
+    </a>
+    <nav class="sf-header-links" aria-label="Primary">
+      <a class="sf-btn" href="https://github.com/vincenzo-afk/SlideForge" target="_blank" rel="noopener">
+        &#9000; View on GitHub
+      </a>
+    </nav>
+  </header>
+
+  <!-- ================= Home view ================= -->
+  <main id="sf-home">
+    <section class="sf-hero" id="top" aria-label="Introduction">
+      <img class="sf-logo-hero" src="assets/logo-512.png" alt="SlideForge logo: a magic wand casting sparkles over a presentation slide" width="130" height="130">
+      <h1>Forge presentations with <span>AI</span> — in seconds.</h1>
+      <p class="sf-lead">Describe any topic and SlideForge generates a complete, beautifully themed slide deck. Edit every word inline, then export to PDF or PPTX. Built with pure HTML, CSS and vanilla JavaScript — zero frameworks, zero build tools.</p>
+    </section>
+
+    <section class="sf-form-card" aria-label="Deck generator">
+      <h2>Create your deck</h2>
+      <p style="margin:0;color:var(--sf-ui-muted);font-size:.9rem;">One prompt. A full presentation.</p>
+      <form id="sf-form" class="sf-form-row">
+        <input class="sf-input" id="sf-topic" type="text" placeholder="e.g. The history of space exploration for high school students" required aria-label="Presentation topic">
+        <input class="sf-input" id="sf-count" type="number" min="3" max="20" value="8" style="max-width:90px;" aria-label="Number of slides">
+        <input class="sf-input" id="sf-audience" type="text" placeholder="Audience (optional)" aria-label="Target audience">
+        <select class="sf-select" id="sf-tone" aria-label="Tone">
+          <option value="professional">Tone: Professional</option>
+          <option value="casual">Tone: Casual</option>
+          <option value="academic">Tone: Academic</option>
+          <option value="persuasive">Tone: Persuasive</option>
+          <option value="educational">Tone: Educational</option>
+        </select>
+        <button class="sf-btn sf-btn-primary" id="sf-generate-btn" type="submit">Forge Slides &#9889;</button>
+      </form>
+      <div class="sf-chips" aria-label="Example topics">
+        <button class="sf-example" type="button" data-topic="How photosynthesis works">Try: Photosynthesis</button>
+        <button class="sf-example" type="button" data-topic="Startup pitch: AI-powered fitness coach">Try: Startup pitch</button>
+        <button class="sf-example" type="button" data-topic="World War II timeline and key battles">Try: WWII timeline</button>
+        <button class="sf-example" type="button" data-topic="Introduction to quantum computing for beginners">Try: Quantum computing</button>
+      </div>
+      <div class="sf-status" id="sf-status" role="status" aria-live="polite"></div>
+      <div class="sf-key-hint" id="sf-key-hint">
+        First time? Add a free AI key in <code>js/config.js</code> (Gemini free tier at
+        <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener">aistudio.google.com/app/apikey</a>) — takes 60 seconds. See the README on GitHub.
+      </div>
+    </section>
+
+    <section class="sf-recent" id="sf-saved" aria-label="Recent decks"></section>
+
+    <section class="sf-features" aria-label="Features">
+      <h2>Everything you need, nothing you don't</h2>
+      <div class="sf-feature-grid">
+        <article class="sf-feature">
+          <span class="sf-feat-icon" aria-hidden="true">&#129504;</span>
+          <h3>AI content + AI themes</h3>
+          <p>The model writes your titles, bullets and speaker notes — and picks a color palette matched to your topic.</p>
+        </article>
+        <article class="sf-feature">
+          <span class="sf-feat-icon" aria-hidden="true">&#9998;</span>
+          <h3>Inline editing</h3>
+          <p>Click &#10014; Edit and change any text on any slide. Your changes are saved in your browser automatically.</p>
+        </article>
+        <article class="sf-feature">
+          <span class="sf-feat-icon" aria-hidden="true">&#128190;</span>
+          <h3>PDF &amp; PPTX export</h3>
+          <p>One-click export. PPTX is generated by hand-written OOXML code — no libraries, no servers.</p>
+        </article>
+        <article class="sf-feature">
+          <span class="sf-feat-icon" aria-hidden="true">&#128640;</span>
+          <h3>Zero dependencies</h3>
+          <p>Pure HTML + CSS + vanilla JavaScript. Open index.html and it just works — no npm, no build step.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= Editor view ================= -->
+  <section class="sf-editor-shell" id="sf-editor" aria-label="Presentation editor">
+    <div class="sf-stage-wrap">
+      <div class="sf-stage" id="sf-stage" role="region" aria-label="Current slide"></div>
+      <div class="sf-toolbar" id="sf-toolbar" role="toolbar" aria-label="Slide controls"></div>
+    </div>
+  </section>
+
+  <!-- ================= Footer ================= -->
+  <footer class="sf-footer" role="contentinfo">
+    <span>&copy; 2026 SlideForge &middot; MIT License</span>
+    <nav class="sf-footer-links" aria-label="Footer">
+      <a href="https://github.com/vincenzo-afk/SlideForge" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://github.com/vincenzo-afk/SlideForge/blob/main/README.md" target="_blank" rel="noopener">Documentation</a>
+      <a href="https://github.com/vincenzo-afk/SlideForge/issues" target="_blank" rel="noopener">Report a bug</a>
+    </nav>
+  </footer>
+
+  <!-- ===== Scripts (order matters, no bundler) ===== -->
+  <script src="js/config.js"></script>
+  <script src="js/ai.js"></script>
+  <script src="js/slides.js"></script>
+  <script src="js/editor.js"></script>
+  <script src="js/export.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
